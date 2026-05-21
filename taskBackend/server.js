@@ -13,7 +13,28 @@ config()
 //create exp app
 const app=exp()
 
-app.use(cors({origin: [process.env.FRONTEND_URL || "http://localhost:5173"],credentials: true}));
+// Robust CORS setup that sanitizes origins and handles trailing slashes automatically
+const rawFrontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+const allowedOrigins = [
+  rawFrontendUrl,
+  "http://localhost:5173"
+].filter(Boolean).map(url => url.trim().replace(/\/$/, ""));
+
+console.log("Allowed CORS origins:", allowedOrigins);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    const normalizedOrigin = origin.trim().replace(/\/$/, "");
+    if (allowedOrigins.includes(normalizedOrigin)) {
+      callback(null, true);
+    } else {
+      console.warn(`[CORS Blocked] Origin "${origin}" is not in allowed list:`, allowedOrigins);
+      callback(new Error(`CORS blocked for origin: ${origin}`));
+    }
+  },
+  credentials: true
+}));
 //cookie parer middleware
 app.use(cookieParser())
 //body parser middleware
