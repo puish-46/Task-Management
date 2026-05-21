@@ -1,0 +1,45 @@
+### CREATE TASK (Admin only - login as admin first, set assignee to a user's _id)
+POST http://localhost:5000/task-api/tasks
+Content-Type: application/json
+
+{
+  "title": "Build backend",
+  "description": "Complete task manager APIs",
+  "status": "PENDING",
+  "priority": "HIGH",
+  "dueDate": "2026-05-30",
+  "assignee": "USER_ID_HERE"
+}
+
+### GET ALL TASKS (Admin: all tasks, User: only assigned tasks)
+GET http://localhost:5000/task-api/tasks
+
+
+### GET SINGLE TASK
+GET http://localhost:5000/task-api/tasks/TASK_ID_HERE
+
+
+### UPDATE TASK (Admin: all fields, User: status only)
+PUT http://localhost:5000/task-api/tasks/TASK_ID_HERE
+Content-Type: application/json
+
+{
+  "status": "IN_PROGRESS"
+}
+
+
+### UPDATE FULL TASK (Admin only)
+PUT http://localhost:5000/task-api/tasks/TASK_ID_HERE
+Content-Type: application/json
+
+{
+  "title": "Complete MERN Task App",
+  "description": "Backend + Frontend + Deployment",
+  "status": "COMPLETED",
+  "priority": "HIGH",
+  "dueDate": "2026-06-10"
+}
+
+
+### DELETE TASK (Admin only)
+DELETE http://localhost:5000/task-api/tasks/TASK_ID_HERE

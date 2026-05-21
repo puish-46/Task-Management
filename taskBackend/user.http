@@ -1,0 +1,44 @@
+### REGISTER USER
+POST http://localhost:5000/auth/users
+Content-Type: application/json
+
+{
+  "firstName": "Puish",
+  "lastName": "User",
+  "email": "puishuser@gmail.com",
+  "password": "Puish@123",
+  "role": "USER"
+}
+
+### LOGIN AS ADMIN (admin is auto-seeded in DB)
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@taskmanager.com",
+  "password": "Admin@123"
+}
+
+### LOGIN AS USER
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "puishuser@gmail.com",
+  "password": "Puish@123"
+}
+
+### LOGOUT
+GET http://localhost:5000/auth/logout
+
+### GET ALL USERS (Admin only - login as admin first)
+GET http://localhost:5000/user-api/users
+
+### GET SINGLE USER (Admin only)
+GET http://localhost:5000/user-api/users/USER_ID_HERE
+
+### TOGGLE USER ACTIVE STATUS (Admin only)
+PUT http://localhost:5000/user-api/users/USER_ID_HERE/toggle-active
+
+### DELETE USER (Admin only)
+DELETE http://localhost:5000/user-api/users/USER_ID_HERE
