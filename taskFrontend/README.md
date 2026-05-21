@@ -1,16 +1,49 @@
-# React + Vite
+# TaskFlow Frontend 🎨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The user interface of TaskFlow is a high-fidelity, interactive, dark-themed dashboard styled using clean glassmorphism techniques (`backdrop-filter: blur`).
 
-Currently, two official plugins are available:
+### 🔗 Live URL
+* [https://task-management-liart-ten.vercel.app](https://task-management-liart-ten.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 💻 Tech Stack & Key Libraries
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React (Vite)**: Quick hot-reloads and ultra-fast production bundle sizes.
+* **Zustand**: Fast, scalable, and ultra-lightweight global state management for auth session and tasks array.
+* **Axios**: Configured with `withCredentials: true` to support HTTP-Only cookies.
+* **React Hot Toast**: Beautiful micro-notifications for user feedback on API actions.
+* **Lucide Icons / Custom SVG**: Sleek UI vector elements.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎨 CSS Styling Decisions (index.css)
+
+All page layouts are governed by a robust, unified styling pattern in `index.css`:
+* **Glassmorphic Cards**: `background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08);`
+* **Vibrant HSL Gradients**: Used for badges, custom buttons, and page headings (`#14b8a6` to `#06b6d4`).
+* **Input Field Overrides**: Custom autocompletion colors and glowing border focuses that blend into the dark theme.
+
+---
+
+## ⚙️ Environment Configuration
+
+For development or production build, configure the API target inside `.env.local`:
+```env
+VITE_API_URL=https://task-management-bjik.onrender.com
+```
+
+---
+
+## 🚀 Running Locally
+
+```bash
+# Install dependencies
+npm install
+
+# Run the dev server
+npm run dev
+
+# Build for production
+npm run build
+```
