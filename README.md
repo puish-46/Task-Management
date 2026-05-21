@@ -1,21 +1,21 @@
-# TaskFlow ⚡ — Premium Task Management Application
+# TaskFlow  — Premium Task Management Application
 
 A full-stack, state-of-the-art task management application built using the MERN stack. Designed with a dark-themed glassmorphism interface, real-time role management, user-private dashboards, and dynamic Kanban board capabilities.
 
-### 🔗 Live Deployments
+###  Live Deployments
 * **Live Frontend (Vercel)**: [https://task-management-liart-ten.vercel.app](https://task-management-liart-ten.vercel.app)
 * **Live Backend API (Render)**: [https://task-management-bjik.onrender.com](https://task-management-bjik.onrender.com)
 
 ---
 
-## ✨ Features
+##  Features
 
-### 👑 Admin Powers (The Command Center)
+###  Admin Powers (The Command Center)
 * **User Management**: Activate, deactivate, or delete user accounts instantly.
 * **Global Task Administration**: Create, edit, assign, and delete tasks for any registered user.
 * **Consolidated Stats Dashboard**: Track overall progress across all users with graphical KPI cards.
 
-### 👤 User Capabilities (Private & Productive)
+###  User Capabilities (Private & Productive)
 * **Self Task Creation**: Create and manage personal tasks directly.
 * **Confidentiality & Privacy**: Users only see and interact with their own tasks (invisible to other non-admin users).
 * **Kanban Board**: Drag-and-drop-style status updates across columns (Pending, In Progress, Completed).
@@ -23,7 +23,7 @@ A full-stack, state-of-the-art task management application built using the MERN 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Frontend**: React (Vite), Zustand (Global State Management), Tailwind CSS & Custom Glassmorphic CSS.
 * **Backend**: Node.js, Express.js, JWT Cookie-Based Authentication, Cors Origin Protection.
@@ -31,7 +31,7 @@ A full-stack, state-of-the-art task management application built using the MERN 
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```bash
 Task-Management/
@@ -50,7 +50,7 @@ Task-Management/
 
 ---
 
-## 🚀 Local Development Setup
+##  Local Development Setup
 
 ### 1. Prerequisites
 Ensure you have Node.js and MongoDB installed locally.
